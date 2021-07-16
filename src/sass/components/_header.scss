@@ -1,0 +1,10 @@
+.app__header{
+    margin-top: 5rem;
+    position: relative;
+    max-height: 25vh;
+    
+    & .app__header--logo{
+        height: 9rem;
+        background-color: transparent;
+    }
+}

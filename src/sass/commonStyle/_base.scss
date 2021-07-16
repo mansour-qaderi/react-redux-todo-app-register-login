@@ -1,0 +1,26 @@
+*,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-weight: 400;
+
+
+  @media (max-width:112.5em){
+    font-size: 1.75rem;
+  }
+
+  @media (min-height: 63.75em){
+    font-size: 3rem;
+  }
+
+}
+

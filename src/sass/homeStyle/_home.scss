@@ -1,0 +1,53 @@
+.section-todo-list{
+
+
+    & .todo-list__main{
+        text-align: center;
+    }
+
+    & .todo-list__pages{
+        text-align: center;
+        padding: 5rem;
+    }
+
+    & .todo-list__pages--page{
+        padding: 2rem;
+    }
+
+    & .todo-list__container{
+        height: 55vh;
+        width: 95%;
+        border: 1px solid #dedddd;
+        margin: 2rem auto;
+        display: inline-flex;
+    }
+
+    & .list__todo{
+        width: 27%;
+        height: 100%;
+    }
+
+    & .list__addTodo{
+        width: 33%;
+        height: 100%;
+
+        & .list__item{
+            padding-top: 2rem;
+
+            & .list__item--value{
+                list-style-type: decimal;
+                float: left;
+                margin-left: 3rem;
+            }
+        }
+    }  
+    
+    & .list__time {
+        width: 40%;
+    }
+
+    & .list__icon{
+        float: right;
+        padding-right: 1rem;
+    }
+}

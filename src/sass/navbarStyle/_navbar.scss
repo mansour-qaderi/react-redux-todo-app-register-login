@@ -1,0 +1,29 @@
+.section-navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+
+    & .navbar__user{
+        display: inline-flex;
+        
+    }
+
+    & .navbar__user--image{
+        width: 5rem;
+        border-radius: 50%;
+    }
+
+    & .navbar__user--username{
+        padding-right: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    & .navbar__view--icons{
+        cursor: pointer;
+        
+        &:not(:first-child){
+            padding-left:1rem
+        }
+    }
+}

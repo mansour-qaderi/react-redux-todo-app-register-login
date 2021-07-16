@@ -1,0 +1,93 @@
+
+.input{
+    padding: 1rem;
+    min-width: 25rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: 520;
+    letter-spacing: .15rem;
+    border-radius: 1rem;
+    min-height: 4.5rem;
+    outline: none;
+    border: 1px solid #777;
+    color: $color-gray-dark-1;
+
+    @media (max-width:112.5){
+        font-size: 2.5rem;
+        padding: 2rem;
+        width: 30rem;
+        height: 6rem;
+        }
+
+    @media (min-height: 63.75em){
+        font-size: 2.5rem;
+        padding: 3rem;
+        width: 45rem;
+        height: 6.5rem;
+    }
+
+    @media (min-height: 85em){
+        font-size: 2.8rem;
+        padding: 3.5rem;
+        width: 50rem;
+        height: 7rem;
+        margin: 1.5rem;
+    }
+
+    // &:focus{
+    //     outline: none;
+    //     border-bottom: 3px solid green;
+    //     box-shadow: 0 1.5rem 2rem rgba($color-black, .1);
+    // }
+
+    &::-webkit-input-placeholder{  //  رنگ placeholder که در input استفاده می شود
+        color: $color-gray-dark-2;
+    }
+}
+
+.todo__input{
+    padding: 1rem;
+    width: 15rem;
+    margin: 1rem;
+    float: left;
+    font-size: 1.5rem;
+    font-weight: 520;
+    letter-spacing: .15rem;
+    border-radius: 1rem;
+    min-height: 3rem;
+    outline: none;
+    border: 1px solid #777;
+    color: $color-gray-dark-1;
+
+    @media (max-width:112.5){
+        font-size: 2.5rem;
+        padding: 2rem;
+        width: 30rem;
+        height: 6rem;
+        }
+
+    @media (min-height: 63.75em){
+        font-size: 2.5rem;
+        padding: 3rem;
+        width: 45rem;
+        height: 6.5rem;
+    }
+
+    @media (min-height: 85em){
+        font-size: 2.8rem;
+        padding: 3.5rem;
+        width: 50rem;
+        height: 7rem;
+        margin: 1.5rem;
+    }
+
+
+    &::-webkit-input-placeholder{  //  رنگ placeholder که در input استفاده می شود
+        color: $color-gray-dark-2;
+    }
+    
+    &:focus{
+        border: 1px solid #768b8c;
+        background-color: #abdbf582;
+    }
+}
