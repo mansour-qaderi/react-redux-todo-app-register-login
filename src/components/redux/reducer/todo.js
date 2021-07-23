@@ -12,7 +12,7 @@ export const actions = ((state = initialStateTodo, action) => {
 
         case todoTypes.DELETE:
             console.log('delete todo', action.payload)
-            return state.filter((item) => item.id !== action.payload)
+            return state.filter((item) => item.id !== action.payload.id)
 
         case todoTypes.EDIT:
             console.log('update todo', action.payload)

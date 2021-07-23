@@ -12,6 +12,7 @@
 
     & .todo-list__pages--page{
         padding: 2rem;
+        text-decoration: none;
     }
 
     & .todo-list__container{
@@ -19,35 +20,83 @@
         width: 95%;
         border: 1px solid #dedddd;
         margin: 2rem auto;
-        display: inline-flex;
+        text-align: center;
+        overflow-y: scroll;
     }
 
-    & .list__todo{
-        width: 27%;
-        height: 100%;
-    }
 
     & .list__addTodo{
-        width: 33%;
+        width: 50%;
         height: 100%;
+        margin: 1rem auto;
 
         & .list__item{
-            padding-top: 2rem;
+            margin: 1.3rem;
+            padding: 1.3rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            border: 1px solid #c2d2ba;
+            justify-content: space-between;
 
             & .list__item--value{
-                list-style-type: decimal;
-                float: left;
-                margin-left: 3rem;
+                
+                & .list__item--id{
+                    margin-right: 1rem;
+                }
+            }
+
+            & .list__item--state{
+                display: inline-flex;
+
+                & .list__item--status{
+                    margin: auto 1rem;
+                    display: inline-block;
+                    padding: .2rem .8rem;
+                    border-radius: .6rem;
+                    border: 1px solid #aea7e0;
+                    background-color: #51b351;
+                    color: #e4eefb;
+                }
+            }
+
+            & .list__popup{
+                cursor: pointer;
+                display: inline-block;
+                border: 1px solid #d6f1d9;
+                border-radius: .7rem;
+            }
+
+            & .todo-list__settings{
+                width: 50%;
             }
         }
     }  
     
-    & .list__time {
-        width: 40%;
+    & .todo-list__time {
+        width: 50%;
+
+        & .todo__header{
+            margin: 1.3rem;
+            font-weight: 300;
+            font-size: 2.8rem;
+        }
+
+        & .todo__timing{
+            margin: 1.3rem;
+            padding: 1.2rem;
+            border-radius: 1rem;
+            border: 1px solid #c2d2ba;
+
+            & .todo__timing__time{
+                font-weight: 400;
+                font-size: 1.8rem;
+                display: inline-block;
+            }
+        }
     }
 
-    & .list__icon{
-        float: right;
-        padding-right: 1rem;
+    & .alert__message{
+        margin: 2rem auto;
     }
 }

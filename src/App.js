@@ -1,23 +1,23 @@
 import React from "react";
-import {BrowserRouter , Switch , Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.scss'
 import LoginPage from './components/PageComponents/loginPage/login';
 import Signin from './components/PageComponents/signinPage/signin';
 import HomePage from './components/homePage';
 
 
-export default function App(){
-  return(
+export default function App() {
+  return (
     <BrowserRouter>
       <Switch>
-        <Route path='/login' exact>
+        <Route path='/login'>
           <LoginPage />
         </Route>
 
-        <Route path='/home'>
+        <Route path='/' exact>
           <HomePage />
         </Route>
-        
+
         <Route path='/signin'>
           <Signin />
         </Route>

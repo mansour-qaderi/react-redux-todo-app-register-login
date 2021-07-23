@@ -2,26 +2,24 @@ import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from '../partComponents/button'
 import { actionCreatores } from '../redux/constants/addTodo'
-import 'material-icons/iconfont/material-icons.css';
+import { Todo_list } from './setTodoList/todo_list'
 
 
 export const Todo = () => {
 
     const auto_increment_id = (todos) => {
-        const max = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
+        const max = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), 0);
         return max + 1
     }
 
 
     const dispatch = useDispatch()
     const [todo, setTodo] = useState('');
-    console.log(todo)
 
     const selector = useSelector((state) => state.todo)
     console.log('selector', selector)
 
     const add = () => {
-
         if (todo === '') {
             alert('add any value')
         }
@@ -46,23 +44,21 @@ export const Todo = () => {
                 className='todo__input'
                 placeholder='add todo'
                 value={todo}
-                onChange={(e) => handleChange(e)}
+                onChange={handleChange}
             />
             <Button
-                buttonValue='Submit'
+                buttonValue='Add'
                 buttonType='submit'
                 buttonClass='todo__btn'
-                buttonHandleClick={() => add()}
+                buttonHandleClick={add}
             />
 
-            <ul className='list__item'>
-                {selector.length > 0 && selector.map((item) => {
-                    return <li className='list__item--value' key={item.id}>{item.item}
-                        <span class="material-icons list__icon">delete</span>
-                        <span class="material-icons list__icon">update</span>
-                    </li>
-                })}
-            </ul>
+            {selector.length > 0 && selector.map((item) => {
+                return <Todo_list value={item.item} id={item.id} status={item.status} key={item.id + item.item} />
+            })}
+
+            {selector.length === 0 && <h1 className='alert__message'>Nothing for show!</h1>}
+
         </div>
     )
 }
