@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { actionCreatores } from '../../redux/constants/addTodo'
 import { useState } from 'react';
-import { TodoSettings } from './todo_settings'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Select from 'react-select'
@@ -49,7 +48,6 @@ export const Todo_list = (props) => {
                     </Popup>
                 </span>
             </div>
-            {open && <TodoSettings />}
         </>
     )
 }

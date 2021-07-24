@@ -4,12 +4,12 @@
     display: inline-block;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
-    border-radius: 10rem;
+    padding: 1.5rem;
+    border-radius: .5rem;
     transition: all .2s;
     position: relative;
     font-size: 1.5rem;
-
+    width: 97%;
     background-color: $color-light;
     color:$color-dark; 
     animation: moveInBottom .5s ease-out .75s;
@@ -46,21 +46,12 @@
         z-index: -1;
         transition: all .4s;
     }
-
-    &:hover::after{
-        transform: scale(1.5);
-        opacity: 0;
-    }
     
 }
 
 .form__button--white{
-  background-color: $color-light;
+  background-color: #3f227b;
   color: $color-primary;
-
-  &::after{
-    background-color: $color-light;
-  }
 
 }
 

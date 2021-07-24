@@ -12,6 +12,7 @@ import { Types } from '../constants/actionTypes';
 
 const initialState = {
     profile: [],
+    userAccessed: false,
     formSubmitted: false
 }
 
@@ -24,8 +25,6 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 profile: state.profile.concat(newProfile),
-                // profile: action.payload.user,
-                formSubmitted: false
             }
 
         case Types.LOGIN:
@@ -33,8 +32,15 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 profile: action.payload.user,
-                formSubmitted: false
             }
+
+        case Types.USER_ACCESS:
+            console.log('user access', action.payload)
+            return {
+                ...state,
+                userAccessed: action.payload
+            }
+
         case Types.FORM_SUBMITION_STATUS:
             return {
                 ...state,
