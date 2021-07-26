@@ -12,12 +12,13 @@ import { Types } from '../constants/actionTypes';
 
 const initialState = {
     profile: [],
+    currentlyUser: [],
     userAccessed: false,
-    formSubmitted: false
 }
 
 
 export const reducer = (state = initialState, action) => {
+    console.log('action', action)
     switch (action.type) {
         case Types.ADD_USER:
             console.log('sing In', action.payload.user);
@@ -25,14 +26,9 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 profile: state.profile.concat(newProfile),
+                currentlyUser: [action.payload.user]
             }
 
-        case Types.LOGIN:
-            console.log('login', action.payload.user)
-            return {
-                ...state,
-                profile: action.payload.user,
-            }
 
         case Types.USER_ACCESS:
             console.log('user access', action.payload)
@@ -41,11 +37,35 @@ export const reducer = (state = initialState, action) => {
                 userAccessed: action.payload
             }
 
-        case Types.FORM_SUBMITION_STATUS:
+        case Types.USER_DATA:
+            console.log('user datas', action.payload);
             return {
                 ...state,
-                formSubmitted: action.payload.status
+                currentlyUser: [action.payload]
             }
+
+        case Types.UPLOAD_IMAGE:
+            console.log('upload image', action.payload)
+
+            const { id, image, image_name } = action.payload;
+            console.log('upload image id', id)
+
+            const mapImage = state.profile.map((item) => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        image: image,
+                        image_name: image_name
+                    }
+                }
+                else return item
+            })
+
+            return {
+                ...state,
+                profile: [...mapImage]
+            }
+
         default:
             return state;
     }

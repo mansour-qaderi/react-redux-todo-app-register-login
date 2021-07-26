@@ -5,19 +5,19 @@ import { actionCreatores } from '../redux/constants/addTodo'
 import { Todo_list } from './setTodoList/todo_list'
 
 
+
 export const Todo = () => {
 
-    const auto_increment_id = (todos) => {
+
+    const Auto_increment_id = (todos) => {
         const max = todos.reduce((maxId, todo) => Math.max(todo.id, maxId), 0);
         return max + 1
     }
-
 
     const dispatch = useDispatch()
     const [todo, setTodo] = useState('');
 
     const selector = useSelector((state) => state.todo)
-    console.log('selector', selector)
 
     const add = () => {
         if (todo === '') {
@@ -26,7 +26,7 @@ export const Todo = () => {
 
         else {
             dispatch(actionCreatores.addTodo({
-                id: auto_increment_id(selector),
+                id: Auto_increment_id(selector),
                 item: todo,
                 status: 'todo'
             }));

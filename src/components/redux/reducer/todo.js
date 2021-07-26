@@ -1,7 +1,6 @@
 import { todoTypes } from '../constants/actionTypes';
 
 
-
 const initialStateTodo = []
 
 export const actions = ((state = initialStateTodo, action) => {
@@ -16,14 +15,21 @@ export const actions = ((state = initialStateTodo, action) => {
 
         case todoTypes.EDIT:
             console.log('update todo', action.payload)
-            return state.map((item) => {
-                if (item.id === action.payload.id) {
+
+            const { id, status, newItem } = action.payload;
+
+            const newState = state?.map((item) => {
+                if (item?.id === id) {
                     return {
-                        ...state,
-                        item: action.payload.item
+                        ...item,
+                        item: newItem,
+                        status: status
                     }
-                }
+                } else return item
             })
+
+            return state = [...newState]
+
         default:
             return state
     }

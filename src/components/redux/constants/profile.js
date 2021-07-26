@@ -12,5 +12,9 @@ export const ActionCreators = {
 
   login: (user) => ({ type: Types.LOGIN, payload: { user } }),
 
-  userAccess: (status) => ({ type: Types.USER_ACCESS, payload: status })
+  userAccess: (status) => ({ type: Types.USER_ACCESS, payload: status }),
+
+  userData: (data) => ({ type: Types.USER_DATA, payload: data }),
+
+  uploadImage: (image) => ({ type: Types.UPLOAD_IMAGE, payload: image }),
 }

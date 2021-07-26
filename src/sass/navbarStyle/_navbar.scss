@@ -1,3 +1,5 @@
+@import "~bootstrap/scss/bootstrap";
+
 .section-navbar{
     display: flex;
     justify-content: space-between;
@@ -26,4 +28,25 @@
             padding-left:1rem
         }
     }
+
+    & .navbar__image{
+        position: relative;
+
+        & .navbar__image--default{
+            width: 6rem;
+            border-radius: 50%;
+        }
+
+        & .navbar__image--icon{
+            position: absolute;
+            display: inline-block;
+            right: 3.8rem;
+            top: 4rem;
+            font-size: 2.3rem;
+            background-color: #40654a;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+    }
+
 }

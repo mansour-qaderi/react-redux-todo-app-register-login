@@ -10,14 +10,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 
+
 const Signin = () => {
 
     const dispatch = useDispatch();
     const history = useHistory()
     const selector = useSelector((state) => state.user);
     const user = selector.profile
-    console.log('selector', user)
 
+    const Auto_increment_id = (users) => {
+        const max = users.reduce((maxId, user) => Math.max(user.id, maxId), 0);
+        return max + 1
+    }
 
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -26,20 +30,42 @@ const Signin = () => {
 
         if (user.length === 0) {
             dispatch(ActionCreators.userAccess(true))
-            dispatch(ActionCreators.addProfile(data))
+            dispatch(ActionCreators.addProfile({
+                id: Auto_increment_id(user),
+                fullname: data.fullname,
+                username: data.username,
+                email: data.email,
+                password: data.password,
+                image: '',
+                image_name: ''
+            }))
             history.push('/')
         }
 
         else {
             user.reduce((preValue, curValue) => {
-                if (preValue !== curValue.email) {
-                    dispatch(ActionCreators.addProfile(data))
-                    dispatch(ActionCreators.userAccess(true))
-                    return history.push('/')
-                } else {
+                if (preValue?.email === curValue.email) {
                     alert('user already exists')
+
                 }
-            }, data.email)
+                else if (preValue?.username === curValue.username) {
+                    alert('username already exists! change it')
+                }
+
+                else {
+                    dispatch(ActionCreators.userAccess(true))
+                    dispatch(ActionCreators.addProfile({
+                        id: Auto_increment_id(user),
+                        fullname: data.fullname,
+                        username: data.username,
+                        email: data.email,
+                        password: data.password,
+                        image: '',
+                        image_name: ''
+                    }))
+                    return history.push('/')
+                }
+            }, data)
         }
 
     };

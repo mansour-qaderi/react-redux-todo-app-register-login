@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import { Navbar } from './PageComponents/navbar';
+import { Navigation } from './PageComponents/navbar';
 import '../sass/homeMainScss.scss';
 import { Todo } from './todo/listOrderedToDo';
 
@@ -8,7 +8,7 @@ const HomePage = () => {
 
     return (
         <section className="section-todo-list">
-            <Navbar />
+            <Navigation />
             <div className="todo-list__main">
                 <div className="todo-list__pages">
                     <Link className="todo-list__pages--page" to='/home'>Todo</Link>

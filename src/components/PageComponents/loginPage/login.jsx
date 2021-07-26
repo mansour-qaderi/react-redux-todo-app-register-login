@@ -12,7 +12,6 @@ import { ActionCreators } from '../../redux/constants/profile';
 const LoginPage = () => {
     const selector = useSelector((state) => state.user);
     const user = selector.profile
-    console.log('selector', user)
 
     const history = useHistory()
     const dispatch = useDispatch()
@@ -21,7 +20,10 @@ const LoginPage = () => {
 
     const onSubmit = data => {
         const isUser = user.find((user) => {
-            return user.username === data.username && user.password === data.password
+            if (user.username === data.username && user.password === data.password) {
+                dispatch(ActionCreators.userData(user))
+                return true
+            }
         })
 
         if (isUser) {

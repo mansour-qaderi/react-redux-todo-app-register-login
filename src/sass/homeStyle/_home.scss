@@ -49,14 +49,19 @@
             & .list__item--state{
                 display: inline-flex;
 
-                & .list__item--status{
-                    margin: auto 1rem;
-                    display: inline-block;
-                    padding: .2rem .8rem;
-                    border-radius: .6rem;
-                    border: 1px solid #aea7e0;
-                    background-color: #51b351;
-                    color: #e4eefb;
+
+                & .list__item--popup {
+                    top: 30rem !important;
+                    width: max-content !important;
+                    text-align: center !important;
+    
+                    & .list__item--select-box{
+    
+    
+                        & .list__item--options{
+                            
+                        }
+                    }
                 }
             }
 
@@ -65,10 +70,6 @@
                 display: inline-block;
                 border: 1px solid #d6f1d9;
                 border-radius: .7rem;
-            }
-
-            & .todo-list__settings{
-                width: 50%;
             }
         }
     }  
@@ -99,4 +100,11 @@
     & .alert__message{
         margin: 2rem auto;
     }
+}
+
+
+.list__item--popup {
+    top: 30rem !important;
+    width: max-content !important;
+    text-align: center !important;
 }

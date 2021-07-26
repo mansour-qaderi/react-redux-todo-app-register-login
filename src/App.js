@@ -5,6 +5,7 @@ import LoginPage from './components/PageComponents/loginPage/login';
 import Signin from './components/PageComponents/signinPage/signin';
 import HomePage from './components/homePage';
 import { useSelector } from "react-redux";
+import { Test } from './components/test'
 
 
 export default function App() {
@@ -23,6 +24,10 @@ export default function App() {
       <Switch>
         <Route path='/login'>
           <LoginPage />
+        </Route>
+
+        <Route path='/test'>
+          <Test />
         </Route>
 
         <PrivateRoute
