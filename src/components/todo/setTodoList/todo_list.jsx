@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { actionCreatores } from '../../redux/constants/addTodo'
+import { actionCreators } from '../../redux/constants/addTodo'
 import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -13,13 +13,14 @@ export const Todo_list = (props) => {
     const dispatch = useDispatch()
 
     const handleDelete = (e) => {
-        dispatch(actionCreatores.deleteTodo({
+        dispatch(actionCreators.deleteTodo({
             id: parseInt(e.target.id),
         }));
     }
 
     const handleUpdate = (e) => {
-        dispatch(actionCreatores.editTodo({
+        console.log(e.target.id)
+        dispatch(actionCreators.editTodo({
             id: parseInt(e.target.id),
             newItem: itemValue,
             status: statusValue

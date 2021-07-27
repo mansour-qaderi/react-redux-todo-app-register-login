@@ -11,6 +11,9 @@
     top: 32rem;
     border: 1px solid #c9c7d2;
     padding: 2rem;
-
+    
+    @media (min-height:1024px){
+        top:40rem
+    }
 
 }

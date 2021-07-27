@@ -3,11 +3,13 @@ export const Types = {
   ADD_USER: 'ADD_USER',
   USER_ACCESS: 'USER_ACCESS',
   UPLOAD_IMAGE: 'UPLOAD_IMAGE',
-  USER_DATA: 'USER_DATA'
+  USER_DATA: 'USER_DATA',
+  UPDATE_USER: 'UPDATE_USER'
 }
 
 export const todoTypes = {
   ADD: 'ADD',
   DELETE: 'DELETE',
   EDIT: 'EDIT',
+  SHOW_WITH_STATUS: 'SHOW_WITH_STATUS'
 }

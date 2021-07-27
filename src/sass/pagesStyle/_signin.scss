@@ -8,10 +8,16 @@
     // background-position: 100%;
     background-size: cover;
 
+
     & .signin__message{
         @include center;
         top: 52rem;
         color: #9d8db3;
+        white-space: nowrap;
+        
+        @media (min-height:1024px){
+            top:70rem
+        }
 
     }
 

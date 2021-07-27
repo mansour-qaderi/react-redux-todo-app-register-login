@@ -6,5 +6,9 @@
     & .app__header--logo{
         height: 9rem;
         background-color: transparent;
+
+        @media (max-width: 37.5em) {
+            height: 7rem;
+          }
     }
 }

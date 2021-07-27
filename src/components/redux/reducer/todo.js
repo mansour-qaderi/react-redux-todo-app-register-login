@@ -1,24 +1,34 @@
 import { todoTypes } from '../constants/actionTypes';
 
 
-const initialStateTodo = []
+const initialStateTodo = {
+    todos: [],
+    showTodosWithStatus: 'all'
+}
 
 export const actions = ((state = initialStateTodo, action) => {
     switch (action.type) {
         case todoTypes.ADD:
-            console.log('add todo', action.payload)
-            return state.concat(action.payload)
+            console.log('add todo', action.payload.add)
+            return {
+                ...state,
+                todos: state.todos.concat(action.payload.add),
+            }
 
         case todoTypes.DELETE:
             console.log('delete todo', action.payload)
-            return state.filter((item) => item.id !== action.payload.id)
+
+            return {
+                ...state,
+                todos: state.todos.filter((item) => item.id !== action.payload.id)
+            }
 
         case todoTypes.EDIT:
             console.log('update todo', action.payload)
 
             const { id, status, newItem } = action.payload;
 
-            const newState = state?.map((item) => {
+            const newState = state.todos.map((item) => {
                 if (item?.id === id) {
                     return {
                         ...item,
@@ -28,7 +38,18 @@ export const actions = ((state = initialStateTodo, action) => {
                 } else return item
             })
 
-            return state = [...newState]
+            return {
+                ...state,
+                todos: [...newState]
+            }
+
+        case todoTypes.SHOW_WITH_STATUS:
+            console.log('choice status todo', action.payload)
+
+            return {
+                ...state,
+                showTodosWithStatus: action.payload.status
+            }
 
         default:
             return state

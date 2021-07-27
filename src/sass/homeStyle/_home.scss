@@ -10,11 +10,6 @@
         padding: 5rem;
     }
 
-    & .todo-list__pages--page{
-        padding: 2rem;
-        text-decoration: none;
-    }
-
     & .todo-list__container{
         height: 55vh;
         width: 95%;
@@ -48,6 +43,7 @@
 
             & .list__item--state{
                 display: inline-flex;
+                align-items: center;
 
 
                 & .list__item--popup {

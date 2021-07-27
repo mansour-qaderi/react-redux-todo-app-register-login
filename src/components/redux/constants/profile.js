@@ -16,5 +16,7 @@ export const ActionCreators = {
 
   userData: (data) => ({ type: Types.USER_DATA, payload: data }),
 
+  updateUser: (updatedUser) => ({ type: Types.UPDATE_USER, payload: updatedUser }),
+
   uploadImage: (image) => ({ type: Types.UPLOAD_IMAGE, payload: image }),
 }

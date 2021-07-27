@@ -6,13 +6,17 @@
      text-align: center;
      width: 100%;
      height: 100vh;
-     // background-position: 100%;
      background-size: cover;
 
+  
    & .login__message{
      @include center;
-     top: 50rem;
+     top: 46rem;
      color: #9d8db3;
+     white-space: nowrap;
 
+     @media (min-height:1024px){
+       top:51rem
+     }
    }
 }
